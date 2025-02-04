@@ -3,7 +3,7 @@
 <launch>
     <!-- Define arguments -->
     <arg name="robot_name" default="miniv" />
-    <arg name="description_pkg_name" default="miniv_description" />
+    <arg name="description_pkg_name" default="miniv_1_1_description" />
     <arg name="xacro_file_path" default="$(find-pkg-share $(var description_pkg_name))/urdf/miniv_robot.xacro" />
     <arg name="robot_description" default="$(command 'xacro $(var xacro_file_path)')"/>
     <arg name="rviz_config_path"

@@ -7,7 +7,7 @@
     <visual>
       <!-- Specify the 3D model to be used for this link -->
       <geometry>
-        <mesh filename="package://miniv_description/meshes/miniv_body.dae"/>
+        <mesh filename="package://miniv_1_1_description/meshes/miniv_body.dae"/>
       </geometry>
       <origin rpy="0 0 -1.57075" xyz="0 0 0"/>
       <material name="gray"/>
