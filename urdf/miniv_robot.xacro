@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot name="miniv_robot">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="miniv_robot">
 
   <!-- Define the base_link, which is the only link in this robot -->
   <link name="base_link">
@@ -52,4 +52,7 @@
     <origin xyz="0.287 0 -0.01" rpy="0 3.14159265359 3.14159265359"/> <!-- The offset position -->
   </joint>
 
+  <xacro:include filename="$(find miniv_1_1_description)/urdf/thruster.xacro"/>
+  <xacro:thruster_macro x="-0.15" y="0.1" z="-0.07" roll="0" pitch="0" yaw="0" side="left"/>
+  <xacro:thruster_macro x="-0.15" y="-0.1" z="-0.07" roll="0" pitch="0" yaw="0" side="right"/>
 </robot>

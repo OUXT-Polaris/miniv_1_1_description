@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:macro name="thruster_macro" params="x y z roll pitch yaw side">
+    <joint name="${side}_thruster_mount_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="${side}_thruster_mount_link"/>
+        <origin xyz="${x} ${y} ${z}" rpy="${roll} ${pitch} ${yaw}"/>
+    </joint>
+
+    <!-- thruster_mount_link -->
+    <link name="${side}_thruster_mount_link">
+        <visual>
+        <geometry>
+            <mesh filename="package://miniv_1_1_description/meshes/thruster_assy.dae"/>
+        </geometry>
+        <origin rpy="0 0 -1.57075" xyz="0 0 0"/>
+        </visual>
+    </link>
+
+    <!-- thruster_link -->
+    <link name="${side}_thruster_link">
+        <!-- No visual defined for thruster_link -->
+    </link>
+
+    <!-- Joint between thruster_mount_link and thruster_link -->
+    <joint name="${side}_thruster_joint" type="fixed">
+        <parent link="${side}_thruster_mount_link"/>
+        <child link="${side}_thruster_link"/>
+        <origin xyz="0 0 -0.179" rpy="0 0 3.14159265359"/>
+    </joint>
+  </xacro:macro>
+</robot>
